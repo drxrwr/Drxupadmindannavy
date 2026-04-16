@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generator Kontak VCF</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Generator Kontak VCF</h1>
+
+    <div class="top-fields">
+      <input type="text" id="namaAdmin" placeholder="Nama Admin (misal: OKE ADMIN)" />
+      <input type="text" id="namaNavy" placeholder="Nama Navy (misal: OKE NAVY)" />
+      <select id="pilihanAwal">
+        <option value="admin">Mulai dari Admin</option>
+        <option value="navy">Mulai dari Navy</option>
+      </select>
+      <select id="urutan">
+        <option value="atas">Dari Atas</option>
+        <option value="bawah">Dari Bawah</option>
+      </select>
+      <!-- sekarang bisa 0 -->
+      <input type="number" id="jumlahAwal" min="0" max="20" value="1" placeholder="Jumlah Awal" />
+      <textarea id="extraAdmin" placeholder="Nomor Tambahan Admin (opsional)"></textarea>
+      <textarea id="extraNavy" placeholder="Nomor Tambahan Navy (opsional)"></textarea>
+    </div>
+
+    <!-- ================= TAMBAHAN BARU ================= -->
+    <div class="bulk-area">
+      <textarea id="bulkInput" placeholder="Paste semua grup di sini..."></textarea>
+      <button onclick="bagiKeKolom()">Bagi ke 20 Kolom</button>
+    </div>
+    <!-- ================================================= -->
+
+    <div class="autofill-fields">
+      <input type="text" id="rangeNomor" placeholder="Contoh: 123-152" />
+      <input type="number" id="perBagian" placeholder="Dibagi per berapa" />
+      <button onclick="isiOtomatis()">Isi Otomatis Nama File</button>
+      <button onclick="hapusOtomatis()">Hapus Nama File</button>
+    </div>
+
+    <!-- ================= TAMBAHAN PREFIX ================= -->
+    <div class="prefix-area">
+      <input type="text" id="prefixFile" placeholder="Prefix nama file (default ADMIN NAVY)" />
+    </div>
+    <!-- =================================================== -->
+
+    <div class="file-columns" id="fileColumns"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
